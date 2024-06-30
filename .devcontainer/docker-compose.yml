@@ -1,4 +1,3 @@
-version: '3.8'
 services:
   app:
     # Uncomment the next four lines if you will use a ptrace-based debugger like C++, Go, and Rust.
@@ -7,7 +6,12 @@ services:
     security_opt:
       - seccomp:unconfined
 
+    build:
+      target: development
+
     volumes:
       - ./:/workspace
       - .devcontainer/scripts/.bashrc:/home/gopher/.bashrc:ro
       - .devcontainer/scripts/git-completion.bash:/home/gopher/.git-completion.bash:ro
+
+    tty: true
