@@ -1,4 +1,4 @@
-FROM golang:1.22.5 as base
+FROM golang:1.23.3 as base
 
 ARG UID=1000
 ARG GID=1001
